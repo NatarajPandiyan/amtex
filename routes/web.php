@@ -21,7 +21,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/MaterialType/List',[MaterialTypeController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/MaterialType/List',[MaterialTypeController::class,'index'])->middleware(['auth', 'verified']);
+Route::get('/MaterialType/detail',[MaterialTypeController::class,'show'])->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
