@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                            <button class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</button>
+                            <a href="/materialType/detail" class="btn btn-primary">Add New</a>
                             </nav>
                         </div>
                     </div>
@@ -31,19 +31,35 @@
                                         <th>Diamention</th>
                                         <th>Thickness</th>
                                         <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($materialTypes as $mt )
                                     <tr>
-                                        <td>Graiden</td>
-                                        <td>vehicula.aliquet@semconsequat.co.uk</td>
-                                        <td>076 4820 8838</td>
-                                        <td>Offenburg</td>
+                                        <td>{{$mt->material_name}}</td>
+                                        <td>{{$mt->width}}</td>
+                                        <td>{{$mt->dimension}}</td>
+                                        <td>{{$mt->thickness}}</td>
+                                        @if($mt->isactive=='1')
                                         <td>
                                             <span class="badge bg-success">Active</span>
                                         </td>
+                                        @else
+                                        <td>
+                                            <span class="badge bg-danger">InActive</span>
+                                        </td>
+                                        @endif
+
+                                        <td>
+                                             <a href="/materialType/detail/{{$mt->id}}" Class="btn btn-success"> Edit</a> 
+                                            <form method="post" action="/materialtype/destroy/{{$mt->id}}">
+                                                @csrf
+                                             <button class="btn btn-danger">Delete</button>
+                                             </form>
+                                        </td>
                                     </tr>
-                                    
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
