@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\controllers\MaterialTypeController;
+use App\Http\controllers\CustomerController;
+use App\Http\controllers\VendorController;
+use App\Http\controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +30,28 @@ Route::post('/materialtype/save',[MaterialTypeController::class,'store'])->middl
 Route::get('/materialType/detail/{id}',[MaterialTypeController::class,'show'])->middleware(['auth', 'verified']);
 Route::post('/materialtype/update',[MaterialTypeController::class,'update'])->middleware(['auth', 'verified']);
 Route::post('/materialtype/destroy/{id}',[MaterialTypeController::class,'destroy'])->middleware(['auth', 'verified']);
+
+Route::get('/customer/List',[CustomerController::class,'index'])->middleware(['auth', 'verified']);
+Route::get('/customer/detail/',[CustomerController::class,'create'])->middleware(['auth', 'verified']);
+Route::post('/customer/save',[CustomerController::class,'store'])->middleware(['auth', 'verified']);
+Route::get('/customer/detail/{id}',[CustomerController::class,'show'])->middleware(['auth', 'verified']);
+Route::post('/customer/update',[CustomerController::class,'update'])->middleware(['auth', 'verified']);
+Route::post('/customer/destroy/{id}',[CustomerController::class,'destroy'])->middleware(['auth', 'verified']);
+
+Route::get('/vendor/List',[VendorController::class,'index'])->middleware(['auth', 'verified']);
+Route::get('/vendor/detail/',[VendorController::class,'create'])->middleware(['auth', 'verified']);
+Route::post('/vendor/save',[VendorController::class,'store'])->middleware(['auth', 'verified']);
+Route::get('/vendor/detail/{id}',[VendorController::class,'show'])->middleware(['auth', 'verified']);
+Route::post('/vendor/update',[VendorController::class,'update'])->middleware(['auth', 'verified']);
+Route::post('/vendor/destroy/{id}',[VendorController::class,'destroy'])->middleware(['auth', 'verified']);
+
+Route::get('/employee/List',[EmployeeController::class,'index'])->middleware(['auth', 'verified']);
+Route::get('/employee/detail/',[EmployeeController::class,'create'])->middleware(['auth', 'verified']);
+Route::post('/employee/save',[EmployeeController::class,'store'])->middleware(['auth', 'verified']);
+Route::get('/employee/detail/{id}',[EmployeeController::class,'show'])->middleware(['auth', 'verified']);
+Route::post('/employee/update',[EmployeeController::class,'update'])->middleware(['auth', 'verified']);
+Route::post('/employee/destroy/{id}',[EmployeeController::class,'destroy'])->middleware(['auth', 'verified']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

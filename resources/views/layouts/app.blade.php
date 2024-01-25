@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('vendors/iconly/bold.css')}}">
     <link rel="stylesheet" href="{{asset('vendors/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('vendors/bootstrap-icons/bootstrap-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
     @stack('css-plugin')
@@ -64,16 +65,16 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="MaterialType/List">Material Type</a>
+                                    <a href="/MaterialType/List">Material Type</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="component-badge.html">Vendor </a>
+                                    <a href="/vendor/List">Vendor </a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="component-breadcrumb.html">Customer</a>
+                                    <a href="/customer/List">Customer</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="component-button.html">Employee</a>
+                                    <a href="/employee/List">Employee</a>
                                 </li>
                                 <li class="submenu-item ">
                                     <a href="component-card.html">Process </a>
@@ -188,15 +189,23 @@
             </footer> -->
         </div>
     </div>
-   
+
+
     <script src="{{asset('vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('/vendors/fontawesome/all.min.js')}}"></script>
-     <script src="{{asset('js/jquery.js')}}"></script>  
+    <script src="{{asset('/js/jquery.js')}}"></script>  
+    
      @stack('js-plugin')
      @stack('js-script')
     <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('/js/bootstrap-datepicker.min.js')}}"></script>  
     <!-- <script src="{{asset('js/jquery.js')}}"></script>   -->
     
+    <script Type="test/javascript">
+        $(document).ready(function(){
+            $('.datepicker').datepicker();
+    });
+        </script>
 </body>
 </html>

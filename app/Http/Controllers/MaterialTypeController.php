@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MaterialType;
 use Illuminate\Http\Request;
-
+use Redirect;
 class MaterialTypeController extends Controller
 {
     /**
@@ -22,7 +22,8 @@ class MaterialTypeController extends Controller
      */
     public function create()
     {
-        return view('master.material_type_detail');
+        $materialType =new MaterialType();
+        return view('master.material_type_detail',['materialType'=>$materialType,'mode'=>'add']);
     }
 
     /**
@@ -48,7 +49,7 @@ class MaterialTypeController extends Controller
         // dd($id);
         $materialType = MaterialType::find($id);
         // dd($materialType);
-        return view('master.material_type_detail')->with('materialType',$materialType);
+        return view('master.material_type_detail',['materialType'=>$materialType,'mode'=>'Edit']);
     }
 
     /**
@@ -72,7 +73,7 @@ class MaterialTypeController extends Controller
         $materialType->thickness=$request->input('thickness');
         $materialType->isactive= ($request->input('status')=='on') ? 1:0;
         $materialType->save();
-        return redirect('/MaterialType/List')->with('status', 'Data Added Successfully!');
+        return redirect('/MaterialType/List')->with('status','Data Added Successfully!');
     }
 
     /**
@@ -82,6 +83,7 @@ class MaterialTypeController extends Controller
     {
         $materialType = MaterialType::find($id);
         $materialType->delete();
-        return redirect('/MaterialType/List')->with('status', 'Data Added Successfully!');
+        return Redirect::back()->with('status','Operation Successful !');
+        // return redirect('/MaterialType/List',['status'=> 'Data Added Successfully!']);
     }
 }

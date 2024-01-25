@@ -14,16 +14,12 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title">MaterialType</h4>
-                                    @if(isset($materialType))
-                                    Edit
-                                    @else
-                                    Add
-                                    @endif
+                                    {{$mode}}
                                 </div>
 
                                 <div class="card-content">
                                     <div class="card-body">
-                                    @if(isset($materialType))
+                                    @if($mode=='Edit')
                                         <form class="form form-vertical" id="materialtype" method="post" action="/materialtype/update">
                                             <input type="hidden" name="id" value="{{$materialType->id}}">
                                     @else
@@ -69,7 +65,7 @@
                                                     <div class="col-12">
                                                         <div class='form-check'>
                                                             <div class="checkbox mt-2">
-                                                            @if(isset($materialType))
+                                                            @if($mode=='Edit')
                                                             <input type="checkbox" name="status" class="form-check-input" {{ ($materialType->isactive=='1') ? 'checked' : ''}} > IsActive
                                                             @else
                                                             <input type="checkbox" name="status" class="form-check-input"  checked="checked" > IsActive
