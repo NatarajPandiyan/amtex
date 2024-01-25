@@ -83,7 +83,7 @@
                                                         <div class='form-check'>
                                                             <div class="checkbox mt-2">
                                                             @if($mode=='Edit')
-                                                            <input type="checkbox" name="status" class="form-check-input" {{ ($employee->isactive=='1') ? 'checked' : ''}} > IsActive
+                                                            <input type="checkbox" name="status" class="form-check-input" {{ ($process->isactive=='1') ? 'checked' : ''}} > IsActive
                                                             @else   
                                                             <input type="checkbox" name="status" class="form-check-input"  checked="checked" > IsActive
                                                             @endif

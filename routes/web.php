@@ -5,6 +5,8 @@ use App\Http\controllers\MaterialTypeController;
 use App\Http\controllers\CustomerController;
 use App\Http\controllers\VendorController;
 use App\Http\controllers\EmployeeController;
+use App\Http\controllers\ProcessController;
+use App\Http\controllers\StyleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +54,19 @@ Route::get('/employee/detail/{id}',[EmployeeController::class,'show'])->middlewa
 Route::post('/employee/update',[EmployeeController::class,'update'])->middleware(['auth', 'verified']);
 Route::post('/employee/destroy/{id}',[EmployeeController::class,'destroy'])->middleware(['auth', 'verified']);
 
+Route::get('/process/List',[ProcessController::class,'index'])->middleware(['auth', 'verified']);
+Route::get('/process/detail/',[ProcessController::class,'create'])->middleware(['auth', 'verified']);
+Route::post('/process/save',[ProcessController::class,'store'])->middleware(['auth', 'verified']);
+Route::get('/process/detail/{id}',[ProcessController::class,'show'])->middleware(['auth', 'verified']);
+Route::post('/process/update',[ProcessController::class,'update'])->middleware(['auth', 'verified']);
+Route::post('/process/destroy/{id}',[ProcessController::class,'destroy'])->middleware(['auth', 'verified']);
+
+Route::get('/model/List',[StyleController::class,'index'])->middleware(['auth', 'verified']);
+Route::get('/model/detail/',[StyleController::class,'create'])->middleware(['auth', 'verified']);
+Route::post('/model/save',[StyleController::class,'store'])->middleware(['auth', 'verified']);
+Route::get('/model/detail/{id}',[StyleController::class,'show'])->middleware(['auth', 'verified']);
+Route::post('/model/update',[StyleController::class,'update'])->middleware(['auth', 'verified']);
+Route::post('/model/destroy/{id}',[StyleController::class,'destroy'])->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

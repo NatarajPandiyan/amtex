@@ -77,13 +77,10 @@
                                     <a href="/employee/List">Employee</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="component-card.html">Process </a>
+                                    <a href="/process/List">Process </a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="component-carousel.html">Carousel</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-dropdown.html">Model</a>
+                                    <a href="/model/List">Model</a>
                                 </li>
                                 <li class="submenu-item ">
                                     <a href="component-list-group.html">Materrial </a>
