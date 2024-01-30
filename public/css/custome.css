@@ -1,0 +1,41 @@
+.sidebar-wrapper .sidebar-header
+{
+    padding:10px !important;
+}
+.card .card-body
+{
+    padding:10px;
+}
+.card-header
+{   
+    padding:10px;       
+}
+.dataTable-table thead th
+{
+    border:1px solid #dce7f1;
+}
+.card
+{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.card .card-body
+{
+    padding:10px;
+}
+.card-header
+{
+    padding:10px;       
+}
+.navbar
+{
+    height:60px;
+    background-color: #edf2f9;
+}
+.sidebar-wrapper .menu
+{
+    padding:10px;
+}
+#sidebar.active .sidebar-wrapper
+{
+    background-color: #edf2f9;
+}

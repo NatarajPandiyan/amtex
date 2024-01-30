@@ -2,6 +2,23 @@
 @section('content')
 @push('css-plugin')
 <link rel="stylesheet" href="{{asset('/vendors/simple-datatables/style.css')}}">
+<style>
+    .invalid{
+        color:red;
+    }
+    .card .card-body
+{
+    padding:10px;
+}
+.card-header
+{
+    padding:10px;       
+}
+.dataTable-table thead th
+{
+    border:1px solid #dce7f1;
+}
+</style>
 @endpush
 <div class="page-heading">
                 <div class="page-title">
@@ -23,7 +40,7 @@
                         </div>
                         <div class="card-body">
                             
-                        <table class="table table-striped" id="table1">
+                        <table class="table table-striped mt-2 " id="table1">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
@@ -31,7 +48,7 @@
                                         <th>Diamention</th>
                                         <th>Thickness</th>
                                         <th>Status</th>
-                                        <th>Action</th>
+                                        <th colspan="2">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,10 +69,10 @@
                                         @endif
 
                                         <td>
-                                             <a href="/materialType/detail/{{$mt->id}}" Class="btn btn-success"> Edit</a> 
-                                            <form method="post" action="/materialtype/destroy/{{$mt->id}}">
+                                             <a href="/materialType/detail/{{$mt->id}}" Class="btn btn-success float-left"> <i class="bi bi-pencil-fill"></i></a>
+                                            <form method="post" action="/materialtype/destroy/{{$mt->id}}" style="display: inline-block;">
                                                 @csrf
-                                             <button class="btn btn-danger">Delete</button>
+                                             <button class="btn btn-danger float-right"><i class="bi bi-trash"></i></button>
                                              </form>
                                         </td>
                                     </tr>

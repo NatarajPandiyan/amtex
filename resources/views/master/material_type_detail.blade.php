@@ -4,6 +4,14 @@
     .invalid{
         color:red;
     }
+    .card .card-body
+{
+    padding:10px;
+}
+.card-header
+{
+    padding:10px;       
+}
 </style>
 @endpush
 @section('content')
@@ -13,8 +21,8 @@
                             <div class="col-8">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">MaterialType</h4>
-                                    {{$mode}}
+                                    <h4 class="card-title mb-3 border-bottom">MaterialType</h4>
+                                    <h4 class="card-title mb-3">{{$mode}}</h4>
                                 </div>
 
                                 <div class="card-content">
@@ -28,9 +36,10 @@
                                         @csrf
                                         <div class="form-body">
                                             
-                                                <div class="row col-8">
+                                                <div class="col-12">
                                               
-                                                    <div class="col-12">
+                                                  <div class="row">
+                                                    <div class="col-12 col-md-6">
                                                         <div class="form-group">
                                                             <label for="first-name-vertical">Material Name</label>
                                                             <input type="text" id="name" value="{{old('name',$materialType->material_name)}}"
@@ -38,7 +47,7 @@
                                                                 placeholder="Material Name">
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
+                                                    <div class="col-12 col-md-6">
                                                         <div class="form-group">
                                                             <label for="email-id-vertical">Width</label>
                                                             <input type="text" id="width" value="{{old('width',$materialType->width)}}"
@@ -46,7 +55,10 @@
                                                                 placeholder="Width">
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
+                                                    </div>
+                                                    <div class="row">
+                                                    
+                                                    <div class="col-12 col-md-6">
                                                         <div class="form-group">
                                                             <label for="contact-info-vertical">Diamention</label>
                                                             <input type="text" id="diamention" value="{{old('dimension',$materialType->dimension)}}"
@@ -54,7 +66,8 @@
                                                                 placeholder="Diamention">
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
+                                                   
+                                                        <div class="col-12 col-md-6">
                                                         <div class="form-group">
                                                             <label for="password-vertical">Thickness</label>
                                                             <input type="text" id="thickness" value="{{old('thickness',$materialType->thickness)}}"
@@ -62,7 +75,9 @@
                                                                 placeholder="Thickness">
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="col-6">
                                                         <div class='form-check'>
                                                             <div class="checkbox mt-2">
                                                             @if($mode=='Edit')
@@ -73,10 +88,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12 d-flex justify-content-end">
+                                                    <div class="col-6 d-flex justify-content-end">
                                                         <button type="submit"
                                                             class="btn btn-primary me-1 mb-1">Submit</button>
 
+                                                </div>
                                                 </div>
                                             </div>
                                         </form>

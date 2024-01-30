@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('vendors/bootstrap-icons/bootstrap-icons.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/custome.css')}}">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
     @stack('css-plugin')
     <style>
@@ -91,9 +92,18 @@
                                 
                             </ul>
                         </li>
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Transaction</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="/purchase-order    ">Purchase Order</a>
+                                </li>
+                        
 
-
-
+                        </li>
  
 
 

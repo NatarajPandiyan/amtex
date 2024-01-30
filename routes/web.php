@@ -6,6 +6,7 @@ use App\Http\controllers\CustomerController;
 use App\Http\controllers\VendorController;
 use App\Http\controllers\EmployeeController;
 use App\Http\controllers\ProcessController;
+use App\Http\Controllers\purchaseController;
 use App\Http\controllers\StyleController;
 use Illuminate\Support\Facades\Route;
 
@@ -73,5 +74,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::resource('/purchase-order',purchaseController::class)->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
