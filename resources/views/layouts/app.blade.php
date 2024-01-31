@@ -83,11 +83,9 @@
                                     <a href="/model/List">Model</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="component-list-group.html">Materrial </a>
+                                    <a href="/material/List">Materrial </a>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="component-modal.html">Size Order</a>
-                                </li>
+                                
                                 
                             </ul>
                         </li>

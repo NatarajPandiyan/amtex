@@ -7,6 +7,7 @@ use App\Http\controllers\VendorController;
 use App\Http\controllers\EmployeeController;
 use App\Http\controllers\ProcessController;
 use App\Http\controllers\StyleController;
+use App\Http\controllers\MaterialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,6 +68,13 @@ Route::post('/model/save',[StyleController::class,'store'])->middleware(['auth',
 Route::get('/model/detail/{id}',[StyleController::class,'show'])->middleware(['auth', 'verified']);
 Route::post('/model/update',[StyleController::class,'update'])->middleware(['auth', 'verified']);
 Route::post('/model/destroy/{id}',[StyleController::class,'destroy'])->middleware(['auth', 'verified']);
+
+Route::get('/material/List',[MaterialController::class,'index'])->middleware(['auth', 'verified']);
+Route::get('/material/detail/',[MaterialController::class,'create'])->middleware(['auth', 'verified']);
+Route::post('/material/save',[MaterialController::class,'store'])->middleware(['auth', 'verified']);
+Route::get('/material/detail/{id}',[MaterialController::class,'show'])->middleware(['auth', 'verified']);
+Route::post('/material/update',[MaterialController::class,'update'])->middleware(['auth', 'verified']);
+Route::post('/material/destroy/{id}',[MaterialController::class,'destroy'])->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
